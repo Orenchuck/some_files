@@ -159,7 +159,7 @@ export default class MyGarageProfile extends React.Component {
     });
   }
 
-  /* выбор производителя техники, должен состыковываться с автокаталогом, значения выбраны для примера */
+  /* выбор производителя техники, должен состыковываться с автокаталогом, пока что хардкод */
 
   fetchMachineProducer = type => {
     switch (type) {
@@ -343,7 +343,7 @@ export default class MyGarageProfile extends React.Component {
       allMachines,
       selectedKey,
       machinesToRender,
-      photo
+      photo,
     } = this.state;
     addMachineData.dateAdded = new Date();
     if (showAdd) {
