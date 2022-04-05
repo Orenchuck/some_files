@@ -1,5 +1,4 @@
 const mysql = require('mysql');
-
 const dbConfig = require('../../common/dbConfig');
 const Model = require('./Model');
 
@@ -89,7 +88,6 @@ class Warehouse extends Model {
       });
     });
   }
-
   static get _with() { return _with; }
 }
 
