@@ -1,14 +1,12 @@
 /* flow */
 
 import React from 'react';
-
 import { Col, Container, Row } from 'react-bootstrap';
 import SidebarItem from './SidebarItem';
 import { getUserFavorites, addToFavorites, deleteFromFavorites } from '../../actions/Profile/Favorites';
 import style from './style.scss'
 
 /* сайдбар в личный кабинет пользователя */
-
 
 export default class ProfileSidebar extends React.Component {
   state = {
@@ -41,7 +39,7 @@ export default class ProfileSidebar extends React.Component {
       favoriveProducts = JSON.parse(favoriveProductsJson);
 
       if (Array.isArray(favoriveProducts)) {
-        //проверка на наличие в коде русской буквы П
+        //проверка на наличие в коде русской буквы П (обещали убрать такие кода, перепроверить)
         favoriveProducts.map(product => {
           if (product.code.includes('П')) {
             const newCode = product.code.split('');
