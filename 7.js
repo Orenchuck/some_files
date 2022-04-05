@@ -28,7 +28,7 @@ export class Products extends PureComponent<Props> {
   state = {
     pageSize: 10,
     sortBy: 'price',
-    order: 'asc'
+    order: 'asc',
   };
 
   componentDidMount() {
@@ -104,6 +104,7 @@ export class Products extends PureComponent<Props> {
       catalog,
       toFirstPage,
     } = this.props;
+    
     const productsUrlPath = `${categoryUrl}/${subcategoryUrl}/${thirdLevelCategory}`;
 
     if (e.target.value.includes('desc')) {
@@ -134,7 +135,7 @@ export class Products extends PureComponent<Props> {
       productsUrlPath,
       catalog.pageSize,
       catalog.sortBy,
-      catalog.order
+      catalog.order,
     );
     toFirstPage();
   };
@@ -146,6 +147,7 @@ export class Products extends PureComponent<Props> {
         params: { categoryUrl, subcategoryUrl, thirdLevelCategory }
       }
     } = this.props;
+    
     const productsUrlPath = `${categoryUrl}/${subcategoryUrl}/${thirdLevelCategory}`;
     const productsByCategoryId = catalog[productsUrlPath];
     if (
@@ -180,7 +182,7 @@ export class Products extends PureComponent<Props> {
 
 const mapStateToProps = ({ catalog, categories }: ReduxState) => ({
   catalog,
-  categories
+  categories,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
@@ -191,14 +193,14 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     filters: Array,
     pageSize: number,
     sortBy: string,
-    order: string
+    order: string,
   ) =>
     dispatch(catalogAction.setPageSize(url, filters, pageSize, sortBy, order)),
   fetchProductsIfNeeded: (
     categoryId: string,
     pageSize: number,
     sortBy: string,
-    order: string
+    order: string,
   ) =>
     dispatch(
       catalogAction.fetchProductsIfNeeded(categoryId, pageSize, sortBy, order)
