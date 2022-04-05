@@ -15,7 +15,7 @@ export default class ChatModal extends React.Component<Props> {
     threadId: null,
     alertMessage: '',
     photo: null,
-    showAlert: false
+    showAlert: false,
   };
 
   /* обработчики сообщения и фотографии */
@@ -42,7 +42,7 @@ export default class ChatModal extends React.Component<Props> {
       const data = {
         text: message,
         author: 'user',
-        thread_id: threadId
+        thread_id: threadId,
       };
       axios({
         headers,
@@ -117,7 +117,7 @@ export default class ChatModal extends React.Component<Props> {
             {showAlert ? (
               <Alert variant="success">
                 Благодарим за Ваш вопрос. Наш эксперт свяжется с вами в
-                ближайшее время
+                ближайшее время.
               </Alert>
             ) : null}
             <div className="mt-4">
