@@ -17,9 +17,7 @@ type Props = {
 export default ({ order, showAllOrder, allOrder }: Props) => {
   const [showOrder, setShowOrder] = useState(false);
   const { products, dispatch } = useContext(BasketContext);
-  const hasProductInBasket = products.find(
-    product => order.id === product.id
-  );
+  const hasProductInBasket = products.find(product => order.id === product.id);
   order.price = order.summ;
 
   return (
