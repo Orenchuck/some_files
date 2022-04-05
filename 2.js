@@ -4,7 +4,6 @@ import faStyles from 'font-awesome/css/font-awesome.min.css';
 import axios from 'axios';
 import BlockUi from 'react-block-ui';
 import 'react-block-ui/style.css';
-
 import { BasketContext } from '../../contexts/basketContext';
 import styles from './style.scss';
 import { getHeader } from '../../actions/header';
@@ -196,7 +195,7 @@ const Checkout = ({ ...props }) => {
             <Alert.Heading>
               {creatingOrderMessage.type === 'success'
                 ? 'Спасибо за заказ!'
-                : 'Возникла ошибка'}
+                : 'Возникла ошибка. Обратитесь к вашему менеджеру.'}
             </Alert.Heading>
             {creatingOrderMessage.text}
           </Alert>
