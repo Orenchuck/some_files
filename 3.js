@@ -22,9 +22,7 @@ export default class EditeMachine extends React.Component<Props> {
     showMaintenance: false,
     selectMaintenance: 'one',
     showTroubleshooting: false,
-    dataTroubleshooting: {
-      comment: ''
-    },
+    dataTroubleshooting: { comment: '' },
     troubleshootingSuccess: '',
     selectedOrders: [],
     showChat: false,
@@ -34,7 +32,7 @@ export default class EditeMachine extends React.Component<Props> {
     ordersByCategory: [],
   };
 
-  /* условный рендер, рендерит возможность отредактировать технику */
+  /* возможность отредактировать технику */
 
   setShowEdit = () => {
     const { showEdite } = this.state;
@@ -51,12 +49,6 @@ export default class EditeMachine extends React.Component<Props> {
       showEditeMileAge: !showEditeMileAge
     });
   };
-
-  // const ordersHistory = (id) => (async () => {
-  //     const result = await getMachineOrders(id);
-  //     orders = result;
-  //     () => setShowOrderHistory(!showOrdersHistory);
-  //   })();
 
   /* подгружаются все заказы по данной единице техники */
 
