@@ -1,7 +1,6 @@
 /* flow */
 
 import React, { PureComponent } from 'react';
-
 import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 import HorizontalSlider from '../../modules/HorizontalCarousel';
@@ -56,7 +55,7 @@ export class SimilarProducts extends PureComponent<Props> {
               <HorizontalSlider
                 items={products}
                 classesName="new-arrivals"
-                slidesToShow={5}
+                slidesToShow={4}
                 titleShortness={32}
                 responsive={true}
               />
