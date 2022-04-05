@@ -63,7 +63,7 @@ async function attachOrderToMachine(req, res) {
   if (req.body) {
     try {
       await models.Garage.attachOrderToMachine(req.body);
-      res.sendSuccess(null, 'Успешно объеденен');
+      res.sendSuccess(null, 'Успешно объеденен.');
     } catch (err) {
       if (err.message) return res.sendFail(err.message, 500);
       return res.sendFail('Внутренняя ошибка', 500);
@@ -73,7 +73,7 @@ async function attachOrderToMachine(req, res) {
   }
 }
 
-/* все детали, привязанные к машине. req.params.id - ид техники */
+/* все детали, привязанные к машине. req.params.id - ид техники. */
 
 async function getOrdersByMachine(req, res) {
   if (req.params.id) {
@@ -180,7 +180,7 @@ async function addPhoto(req, res) {
 	"mileage",
 	"mileageMeasure",
 	"dateAdded",
-  "isDelete": 1 | 0
+  	"isDelete": 1 | 0
    */
 
 async function addUserMachine(req, res, next) {
@@ -202,10 +202,10 @@ async function addUserMachine(req, res, next) {
         data.user.id = req.user.id;
         data.user.type = req.user.type;
         data.create = true;
-        const aa = await addPhoto(data, res);
-        res.sendSuccess({ id: machine.insertId, message: 'Успешно добавлено', photoPath: aa.photoPath });
+        const img = await addPhoto(data, res);
+        res.sendSuccess({ id: machine.insertId, message: 'Успешно добавлено.', photoPath: img.photoPath });
       } else {
-        res.sendSuccess({ id: machine.insertId, message: 'Успешно добавлено' });
+        res.sendSuccess({ id: machine.insertId, message: 'Успешно добавлено.' });
       }
       
     } catch (err) {
